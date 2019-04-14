@@ -29,7 +29,7 @@ class Profil extends React.Component{
     
     render(){
        
-        console.log('stin render profil o user', this.props.user)
+      
         let x = [null,maik,nikos,alex,sotos,xristina,maria]
         
         return(

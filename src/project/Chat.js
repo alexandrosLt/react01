@@ -45,49 +45,13 @@ class Chat extends React.Component{
           messages : [],
 
         }
-       this.handleClick = this.handleClick.bind(this)
+      
     }
    
      
     
      //insert message from enter 
-    handleClick(e){
-       if(e.key==='Enter'){
-        let inputValue = document.getElementById("inp").value
-
-
-        window.$.ajax({
-          url: 'http://localhost:8080/api/messages/send_msg',
-          dataType: 'json',                       
-          type: 'POST' ,
-          data :{
-             senderId : localStorage.getItem("id"),
-             receiverId : this.props.user.id,
-             text : inputValue
-          }
-  
- 
-      }).then(json => {   
-                 console.log('to json sto call tou clic',json)
-                 this.setState({listOfmessages : json,
-                                isLoading :false
-                 })
-                 console.log('thisstatelistofmsges sto messenger',this.state.listOfmessages)
-       });
-         
-        
-        let prevMessages = this.state.messages
-         prevMessages.push({id :4 , text : inputValue,sender : "admin"})
- 
-        console.log("prevmessages : ",prevMessages,"input value :",inputValue)
- 
-        this.setState({
-          messages : prevMessages
-        })
-        document.getElementById("inp").value = ""
-       }
-      
-    }
+   
    
     componentDidMount(){
        
@@ -114,10 +78,9 @@ class Chat extends React.Component{
       
       
     
-    let listOfMsges = this.props.messagesForChat.map((e)=> <SingleMessage  key = {e.id} data = {e}/>)
+    let listOfMsges = this.props.messagesForChat.map((e)=> <SingleMessage  key = {e.id} data = {e} />)
     
-    console.log('this.props.messagesforchat',this.props.messagesForChat)
-  
+   
         
 
 
@@ -137,7 +100,7 @@ class Chat extends React.Component{
                      id ="inp"
                      placeholder="Type your message  " 
                      //style = {{width : "80%" , height :""}} 
-                     onKeyPress = {this.handleClick}
+                     onKeyPress = {this.props.funk2}
                />
              
                                 

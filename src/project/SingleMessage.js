@@ -14,7 +14,7 @@ class SingleMessage extends React.Component{
         
         return(
            
-            <div style ={ { float :  singleMessageObject.senderId == localStorage.getItem("id") ? "right" :"left" ,
+            <div  style ={ { float :  singleMessageObject.senderId == localStorage.getItem("id") ? "right" :"left" ,
                            backgroundColor : singleMessageObject.senderId==localStorage.getItem("id") ? "rgb(255, 0, 76)" :"lightgrey",
                            color: singleMessageObject.senderId==localStorage.getItem("id") ? "white" :"black",
                            display: singleMessageObject.text ==="" ? "none" : "inline-block",
