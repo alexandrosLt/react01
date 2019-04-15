@@ -22,7 +22,6 @@ class Register extends React.Component{
 
 
         let r = this.role.current.checked ? "EMPLOYEE" : "COMPANY" 
-        let user = {}
          window.$.ajax({
             url: 'http://localhost:8080/api/register/signup',
             dataType: 'json',                       
@@ -36,7 +35,7 @@ class Register extends React.Component{
                roleName : r 
             
             }
-        }).then((json) => {   
+        }).then(() => {   
            
             this.props.history.push('/login');
         });

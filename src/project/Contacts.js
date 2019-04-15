@@ -9,20 +9,16 @@ class Contacts extends React.Component{
         super()
         this.state = {
             characters : [],
-            isLoading : false,
-            isActive : true
+            isLoading : false
+           
         }
     }
-    
-    
-    
-
-    
     render(){
          let SingleContactsList =      this.props.lista.map((eachUser)=> 
                                        <div  key = {eachUser.id}>
                                             <SingleContact user = {eachUser} 
-                                                           funk = {this.props.funk}/>
+                                                           funk = {this.props.funk}
+                                                           />
                                        </div>)
         
         return(
